@@ -10,4 +10,7 @@ class Sfscode < Formula
     bin.install "convertSFS_CODE", "sfs_code"
   end
 
+  def test
+    system "#{bin}/sfs_code 2>&1 | grep -q sfs && #{bin}/convertSFS_CODE 2>&1 | grep -q SFS"
+  end
 end
